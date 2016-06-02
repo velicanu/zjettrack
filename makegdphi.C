@@ -1,7 +1,7 @@
 {
   string thistype = "mm";
-  TFile * ppfile = TFile::Open("/media/ursu/023c641b-4a22-44f7-9d41-268f18a4ec06/oldroots/g.pp-photonHLTFilter-v0-HiForest.root");
-  TFile * pbpbfile = TFile::Open("/media/ursu/023c641b-4a22-44f7-9d41-268f18a4ec06/oldroots/g.newtrkcuts.HIPhoton40AndZ-PbPb-photonHLTFilter-v3.root");
+  TFile * ppfile = TFile::Open("/export/d00/scratch/dav2105/ztrees/g.pp-photonHLTFilter-v0-HiForest.root");
+  TFile * pbpbfile = TFile::Open("/export/d00/scratch/dav2105/ztrees/g.newtrkcuts.HIPhoton40AndZ-PbPb-photonHLTFilter-v3.root");
 
   TTree * ppztree = (TTree*) ppfile->Get("ztree");
   TTree * pbpbztree = (TTree*) pbpbfile->Get("ztree");

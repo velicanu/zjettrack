@@ -1,8 +1,8 @@
 {
   string thistype = "mm";
 
-  TFile * ppfile = TFile::Open("/media/ursu/023c641b-4a22-44f7-9d41-268f18a4ec06/oldroots/z.PromptReco-AOD-DimuonSkim-Mass40-262274-262328_ppFOREST_v24.root");
-  TFile * pbpbfile = TFile::Open("/media/ursu/023c641b-4a22-44f7-9d41-268f18a4ec06/oldroots/z.azsigmon-HIRun2015E-PromptReco-AOD-DimuonSkim-Mass40-v3_forest_csjet_v1_2.root");
+  TFile * ppfile = TFile::Open("/export/d00/scratch/dav2105/ztrees/z.PromptReco-AOD-DimuonSkim-Mass40-262274-262328_ppFOREST_v24.root");
+  TFile * pbpbfile = TFile::Open("/export/d00/scratch/dav2105/ztrees/z.azsigmon-HIRun2015E-PromptReco-AOD-DimuonSkim-Mass40-v3_forest_csjet_v1_2.root");
 
   TTree * ppztree = (TTree*) ppfile->Get("ztree");
   TTree * pbpbztree = (TTree*) pbpbfile->Get("ztree");
