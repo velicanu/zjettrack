@@ -513,6 +513,7 @@ void gammajetSkim(TString infilename="HiForest.root", TString outfilename="Zeven
     if(j%10000 == 0) { cout << "Processing event: " << j << endl; }
 
     njet = 0;
+    float maxJetPt = 0;
     for(int ij=0; ij<nref; ij++) {
       // if(jtpt[ij]>1)
       // if(goodJet(ij))
@@ -527,6 +528,7 @@ void gammajetSkim(TString infilename="HiForest.root", TString outfilename="Zeven
         chargedSum[njet] = _chargedSum[ij];
         neutralSum[njet] = _neutralSum[ij];
         eSum[njet] = _eSum[ij];
+        if(maxJetPt<jetpt[njet]) maxJetPt = jetpt[njet];
         njet++;
       }
     } //end of jet loop
@@ -741,8 +743,8 @@ void gammajetSkim(TString infilename="HiForest.root", TString outfilename="Zeven
       if(!(trkPt[itrk]<20 || (Et>0.5*trkPt[itrk]))) continue;
 
       float trkweight = 0;
-      if(is_pp) trkweight = getTrkWeight(trkCorr,i,0);
-      else trkweight = getTrkWeight(trkCorr,i,hiBin);
+      if(is_pp) trkweight = getTrkWeight(trkCorr,itrk,0);
+      else trkweight = getTrkWeight(trkCorr,itrk,hiBin);
       trkPt[ntracks] = trkPt_[itrk];   //[nTrk]
       trkPtError[ntracks] = trkPtError_[itrk];   //[nTrk]
       trkNHit[ntracks] = trkNHit_[itrk];   //[nTrk]
